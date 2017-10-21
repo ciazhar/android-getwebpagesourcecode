@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:text="@string/get_page_source"
         android:layout_below="@+id/main_spinner_protocol"
+        android:onClick="getPageSource"
         />
 
     <ScrollView

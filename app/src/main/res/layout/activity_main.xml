@@ -7,47 +7,48 @@
     tools:context="com.ciazhar.websitesourcecodeapp.MainActivity">
 
     <TextView
-        android:id="@+id/main_get_url"
+        android:id="@+id/main_label_get_url"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter URL!"
+        android:text="@string/enter_url"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <Spinner
-        android:id="@+id/main_protocol_spinner"
+        android:id="@+id/main_spinner_protocol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/main_get_url"
+        android:layout_below="@+id/main_label_get_url"
         >
     </Spinner>
     <EditText
-        android:id="@+id/main_url_input"
+        android:id="@+id/main_get_url"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/main_protocol_spinner"
-        />
+        android:layout_toEndOf="@+id/main_spinner_protocol"
+        android:inputType="textUri" />
     <Button
-        android:id="@+id/main_button_get_page_source"
+        android:id="@+id/main_button_get_html"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Page Source"
-        android:layout_below="@+id/main_protocol_spinner"
+        android:text="@string/get_page_source"
+        android:layout_below="@+id/main_spinner_protocol"
         />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/main_button_get_page_source"
+        android:layout_below="@+id/main_button_get_html"
         >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/main_text_get_html"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Page Source Should Appear Here"
+                android:text="@string/page_source_should_appear_here"
                 />
         </LinearLayout>
     </ScrollView>

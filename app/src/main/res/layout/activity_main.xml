@@ -4,54 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context="com.ciazhar.websitesourcecodeapp.MainActivity">
-
-    <TextView
-        android:id="@+id/main_label_get_url"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.CardView
+        android:id="@+id/above_card_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/enter_url"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <Spinner
-        android:id="@+id/main_spinner_protocol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/main_label_get_url"
         >
-    </Spinner>
-    <EditText
-        android:id="@+id/main_get_url"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/main_spinner_protocol"
-        android:inputType="textUri" />
-    <Button
-        android:id="@+id/main_button_get_html"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/get_page_source"
-        android:layout_below="@+id/main_spinner_protocol"
-        android:onClick="getPageSource"
-        />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            >
+            <TextView
+                android:id="@+id/main_label_get_url"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_url"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="20sp"
+                />
+            <Spinner
+                android:id="@+id/main_spinner_protocol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:layout_below="@+id/main_label_get_url"
+                android:layout_alignStart="@+id/main_label_get_url">
+            </Spinner>
+            <EditText
+                android:id="@+id/main_get_url"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:inputType="textUri"
+                android:gravity=""
+                android:layout_above="@+id/main_button_get_html"
+                android:layout_toEndOf="@+id/main_spinner_protocol" />
+            <Button
+                android:id="@+id/main_button_get_html"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/get_page_source"
+                android:onClick="getPageSource"
+                android:foregroundGravity="right"
+                android:layout_below="@+id/main_spinner_protocol"
+                android:layout_alignEnd="@+id/main_get_url"
+                android:layout_marginBottom="20dp"
+                />
+        </RelativeLayout>
 
-    <ScrollView
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_below="@+id/above_card_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/main_button_get_html"
+        android:layout_marginTop="10dp"
         >
-        <LinearLayout
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/main_text_get_html"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView2">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/page_source_should_appear_here"
-                />
-        </LinearLayout>
-    </ScrollView>
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+                <TextView
+                    android:id="@+id/main_text_get_html"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/page_source_should_appear_here"
+                    />
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+
+
 
 </RelativeLayout>
